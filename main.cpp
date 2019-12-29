@@ -9,7 +9,8 @@ int main(){
     string uniqueString = "Big boi";
     
     array_string arrayStringTester = array_string();
-    arrayStringTester.is_unique(uniqueString);
+    //arrayStringTester.is_unique(uniqueString);
+    arrayStringTester.is_permutation("ABC", "BAC");
 
     return 0;
 }
