@@ -10,12 +10,12 @@ int main(){
     
     array_string arrayStringTester = array_string();
     //arrayStringTester.is_unique(uniqueString);
-    //arrayStringTester.is_permutation("ABC", "BAC");
+    //arrayStringTester.is_permutation("taco cat", "atco cta");
 
 
-    char foo [10] = {'a', ' ', 'a', 'b', ' ', 'b'};
-    arrayStringTester.urlify(foo);
+    // char foo [10] = {'a', ' ', 'a', 'b', ' ', 'b'};
+    // arrayStringTester.urlify(foo);
+    arrayStringTester.one_away("time", "mmmes");
 
-    
     return 0;
 }

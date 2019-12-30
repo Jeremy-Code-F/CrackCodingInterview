@@ -3,6 +3,8 @@
 #include<iterator>
 #include<cstring>
 #include<map>
+#include<bits/stdc++.h>
+#include<stdlib.h>
 using namespace std;
 
 class array_string{
@@ -10,6 +12,7 @@ class array_string{
         static bool is_unique(string stringToCheck);
         static bool is_permutation(string firstString, string secondString);
         static void urlify(char * a);
+        static bool one_away(string firstString, string secondString);
 
 };
 
@@ -81,5 +84,43 @@ void array_string::urlify(char* a){
     }
     for(int i = 0; i < strlen(a); i++){
         cout << a[i] << endl;
+    }
+}
+
+bool array_string::one_away(string firstString, string secondString){
+
+    map<char, int> mp;
+    int diff = firstString.length() - secondString.length();
+    int difference = abs(diff);
+    if(difference > 1){
+        return false;
+    }
+
+    transform(firstString.begin(), firstString.end(), firstString.begin(), ::tolower);
+    transform(secondString.begin(), secondString.end(), secondString.begin(), ::tolower);
+
+    for(int i = 0; i < firstString.length(); i++){
+        mp[firstString[i]]++;
+    }
+
+    for(int i = 0; i < secondString.length(); i++){
+        mp[secondString[i]]++;
+    }
+
+
+    int numOfDifferences = 0;
+    for(auto const& x : mp){
+        if(x.second % 2 != 0){
+            numOfDifferences++;
+        }
+        cout << x.first << ':' << x.second << endl;
+    }
+
+    if(numOfDifferences > 1 && numOfDifferences != 2){
+        cout << "More than one edit away." << endl;
+        return false;
+    }else{
+        cout << "1 or less edits away" << endl;
+        return true;
     }
 }
