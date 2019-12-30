@@ -13,7 +13,7 @@ class array_string{
         static bool is_permutation(string firstString, string secondString);
         static void urlify(char * a);
         static bool one_away(string firstString, string secondString);
-
+        static string string_compression(string stringToCompress);
 };
 
 
@@ -123,4 +123,19 @@ bool array_string::one_away(string firstString, string secondString){
         cout << "1 or less edits away" << endl;
         return true;
     }
+}
+
+string array_string::string_compression(string stringToCompress){
+    cout << "Compressing: " << stringToCompress << endl;
+    
+    for(int i = 0; i < stringToCompress.length(); i++){
+        int currentCounter = 0;
+        while(stringToCompress[i] == stringToCompress[i + 1]){
+            currentCounter++;
+            i++;
+        }
+        cout << stringToCompress[i] << currentCounter + 1;
+    }
+
+    return "done";
 }

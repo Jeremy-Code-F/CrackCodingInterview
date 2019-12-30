@@ -15,7 +15,7 @@ int main(){
 
     // char foo [10] = {'a', ' ', 'a', 'b', ' ', 'b'};
     // arrayStringTester.urlify(foo);
-    arrayStringTester.one_away("time", "mmmes");
-
+    //arrayStringTester.one_away("time", "mmmes");
+    arrayStringTester.string_compression("aabbbccccaaa");
     return 0;
 }
