@@ -6,6 +6,7 @@
 #include<bits/stdc++.h>
 #include<stdlib.h>
 using namespace std;
+const int IMAGE_SIZE = 4;
 
 class array_string{
     public:
@@ -14,6 +15,7 @@ class array_string{
         static void urlify(char * a);
         static bool one_away(string firstString, string secondString);
         static string string_compression(string stringToCompress);
+        static void rotate_image(int imageToRotate[IMAGE_SIZE][IMAGE_SIZE]);
 };
 
 
@@ -138,4 +140,29 @@ string array_string::string_compression(string stringToCompress){
     }
 
     return "done";
+}
+
+void array_string::rotate_image(int imageToRotate[IMAGE_SIZE][IMAGE_SIZE]){
+    int finalArr[IMAGE_SIZE][IMAGE_SIZE];
+    int currentColumn = 3;
+    int currentRow = 0;
+    //Do things
+    for(int i = 0; i < 4; i++){
+        for(int j = 0; j < 4; j++){
+            cout << imageToRotate[i][j] << " Going to : Row: " << currentRow << " Column: " << currentColumn << endl;
+            finalArr[currentRow][currentColumn] = imageToRotate[i][j];
+            currentRow++;
+
+        }
+        currentColumn--;
+        currentRow = 0;
+    }
+
+
+    for(int i = 0; i < IMAGE_SIZE; i++){
+        for(int j = 0; j < IMAGE_SIZE; j++){
+            cout << finalArr[i][j] << ",";
+        }
+        cout << endl;
+    }
 }
